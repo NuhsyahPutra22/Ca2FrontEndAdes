@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Quiz</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/feedback.css">
+  <link rel="stylesheet" type="text/css" href="../css/consistent.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="feedback-page">
+
+        <!-- Content Header on top of the page -->
+        <div class="content-Header">
+          <h1>SOC Management System</h1>
+          <p>With SP, it's So Possible!</p> 
+        </div>
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-sm" id="navbar">
+          <div class="container-fluid" >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/AdminIndex.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/AdminModule.html">Modules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/AdminCourse.html">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/AdminGpa-calculator.html">Target Setting</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/AdminFeedback.html">Feedback From Students</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      <!-- Feedback form -->
+    <form class="feedback" method="POST" id="submitfeedback">
+      <p>Feedback</p>
+      <div class="col-10">
+      <label>Title</label>
+      <input type="text" class="form-control" id="feedback-title" aria-describedby="feedback-title" placeholder="Please enter a title">
+      </div>
+      <div class="col-10">
+      <label>Remarks</label>
+      <textarea class="feedbacktext" id="textfeedback"></textarea>
+    </div>
+      <button >Submit</button>
+    </form>
+
+    <div class="getfeedback">
+        <p class="a">User Feedback</p>
+    <div id="getfeedback" >
+    </div>
+    </div>
+  
+
+
+        <!-- Footer -->
+        <div class="footer">
+          <h3>Singapore Polytechnic</h3>
+          <p>500 Dover Road Singapore 139651</p>
+        </div>     
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="../js/feedback.js"></script>
+</body>
+
+</html>

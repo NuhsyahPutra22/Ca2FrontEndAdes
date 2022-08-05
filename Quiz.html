@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Quiz</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/quiz.css">
+  <link rel="stylesheet" type="text/css" href="../css/consistent.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="quiz-page">
+
+    <body>
+
+        <div class="content-Header">
+          <h1>SOC Management System</h1>
+          <p>With SP, it's So Possible!</p> 
+        </div>
+        
+         <!-- Navigation Bar -->
+         <nav class="navbar navbar-expand-sm" id="navbar">
+          <div class="container-fluid">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Module.html">Modules</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Course.html">Courses</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Gpa-calculator.html">Target Setting</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Quiz.html">DIT Specialization Quiz</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/FeedbackForm.html">Student Feedback</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- DIT Specialization Quiz -->
+        <form name="quiz" id="quiz">
+          <!-- Question 1 -->
+          <div class="question">
+            <p>Q1. Are you very confident at programming?</p>
+            <p>1. Super confident!</p>
+            <p>2. Neutral</p>
+            <p>3. Not so good</p>
+            <p><input type="text" name="q" class="inputs" id="q1-input" placeholder="Please type number here"></p>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="question">
+            <p>Q2. Which programming language would you like to learn?</p>
+            <p>1. Java</p>
+            <p>2. C#</p>
+            <p>3. HTML/CSS (in-depth)</p>
+            <p><input type="text" name="q" class="inputs" id="q2-input" placeholder="Please type number here"></p>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="question">
+            <p>Q3. Besides programming, do you have an interest in these areas?</p>
+            <p>1. Programming / Learning a new language (language or code)</p>
+            <p>2. Gaming</p>
+            <p>3. Art / Music / Design</p>
+            <p><input type="text" name="q" class="inputs" id="q3-input" placeholder="Please type number here"></p>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="question">
+            <p>Q4. If you were to choose to work in a tech company, which job title would you like to apply for?</p>
+            <p>1. Software Engineer / Software Developer</p>
+            <p>2. Immersive Engineer / Game Developer</p>
+            <p>3. Front-End Developer / UI/UX Designer</p>
+            <p><input type="text" name="q" class="inputs" id="q4-input" placeholder="Please type number here"></p>
+          </div>
+
+          <!-- Question 5 -->
+          <div class="question">
+            <p>Q5. How confident are you with HTML/CSS/JavaScript?</p>
+            <p>1. Over confident!</p>
+            <p>2. Quite ok</p>
+            <p>3. Quite ok, but I prefer HTML/CSS more!</p>
+            <p><input type="text" name="q" class="inputs" id="q5-input" placeholder="Please type number here"></p>
+          </div>
+
+          <!-- Question 6 -->
+          <div class="question">
+            <p>Q6. What kind of learner are you?</p>
+            <p>1. Kinesthetic</p>
+            <p>2. Auditory</p>
+            <p>3. Visual</p>
+            <p><input type="text" name="q" class="inputs" id="q6-input" placeholder="Please type number here"></p>
+          </div>
+
+          <!-- Question 7 -->
+          <div class="question">
+            <p>Q7. What are some programming languages you are very familiar with?</p>
+            <p>List them in this order. Eg. HTML, CSS, Python.</p>
+            <ul>
+              <ol>- HTML</ol>
+              <ol>- CSS</ol>
+              <ol>- Java</ol>
+              <ol>- JavaScript</ol>
+              <ol>- Python</ol>
+              <ol>- C#</ol>
+              <ol>- C++</ol>
+              <ol>- C</ol>
+              <ol>- Swift</ol>
+              <ol>- Ruby</ol>
+              <ol>- R</ol>
+              <ol>- Golang</ol>
+              <ol>- PHP</ol>
+              <ol>- Objective-C</ol>
+            </ul>
+            <p><input type="text" name="q7" class="inputs" id="q7-input" placeholder="Eg. HTML, CSS, Java, JavaScript, etc."></p>
+          </div>
+
+          <!-- Question 8 -->
+          <div class="question">
+            <p>State your userid</p>
+            <p><input type="text" name="q" class="inputs" id="user-input" placeholder="Eg. 1"></p>
+          </div>
+
+        </form>
+        
+        <!-- Submit Button -->
+        <input type="button" name="" value="Submit!" id="button" class="submit" onclick="submit()">
+
+        <!-- Quiz Result will appear here -->
+        <p id="result"></p>
+
+        <!-- Create input -->
+        <input type="button" name="" value="Enter" id="button" class="submit" onclick="createAttempt()">
+        
+        <!-- Refresh button -->
+        <input type="button" name="" value="Try Again" id="reload-button" onclick="refresh()">
+
+        <!-- Table -->
+        <h3>Quiz Board</h3>
+        <div id="content-item-quiz">
+          <table id="quiz-table" class="table">
+            <thead>
+              <tr class="align-middle">
+                <th scope="col" class="col-1" >ID</th>
+                <th scope="col" class="col-1" >Q1</th>
+                <th scope="col" class="col-1" >Q2</th>
+                <th scope="col" class="col-1" >Q3</th>
+                <th scope="col" class="col-1" >Q4</th>
+                <th scope="col" class="col-1" >Q5</th>
+                <th scope="col" class="col-1" >Q6</th>
+                <th scope="col" class="col-1" >Q7</th>
+                <th scope="col" class="col-1" >userid</th>
+                <th scope="col" class="col-1" >DELETE</th>
+
+              </tr>
+            </thead>
+            <tbody class="quiz-content" id="quizlist">
+
+            </tbody>
+                            
+          </table>
+        </div>
+
+
+        <!-- Footer -->
+        <div class="footer">
+          <h3>Singapore Polytechnic</h3>
+          <p>500 Dover Road Singapore 139651</p>
+        </div>
+        
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="../js/quiz.js"></script>
+  <script src="../js/quizConnect.js"></script>
+</body>
+</html>

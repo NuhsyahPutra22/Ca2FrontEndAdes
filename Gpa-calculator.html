@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>GpaCalculator</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/gpaCalculator.css">
+  <link rel="stylesheet" type="text/css" href="../css/consistent.css">
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<body class="my-gpa-calculator-page">
+
+        <!-- Content Header -->
+        <div class="content-Header">
+          <h1>SOC Management System</h1>
+          <p>With SP, it's So Possible!</p> 
+        </div>
+        
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-sm" id="navbar">
+            <div class="container-fluid">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Module.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Course.html">Courses</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Gpa-calculator.html">Target Setting</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/Quiz.html">DIT Specialization Quiz</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://gmstrikerz.github.io/Ca2AdesFrontEnd/view/FeedbackForm.html">Student Feedback</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+
+<div id="lcol" class="">
+
+	<div id="doc" class=" p-3 bg-secondary text-white  ">
+		
+		<div class="p-2 bg-info text-warning">
+			<h1 class="text-warning text-center">GPA Calculator</h1>
+			<form id="calcform" name="calcform" class="calc" autocomplete="off">
+			<table id="tbl">
+				<tr>
+					<td>Class</td>
+					<td>Grade</td>
+					<td>Credits /<br>Hours</td>
+				</tr>
+				<tbody>
+				</tbody>
+			</table>
+		   <div id="cumdiv" class="form-group">
+		      <label for="gpa">Previous cumulative GPA/credits (optional)</label>
+		      <div class="row">
+		      <div class="col">
+		      
+		      <input type="number" id="cgpa" min="0" step="any" placeholder="cumulative gpa" class="form-control">
+		      </div>
+		      <div class="col">
+		      
+		      <input type="number" id="chours" min="0" step="any" placeholder="credits" class="form-control">
+		      </div>
+		      </div>
+		   </div>
+		   <div class="form-group">
+		      <button type="button" id="calcbtn" title="Calculate" class="btn btn-primary"> Calculate</button>
+		      <button type="reset" id="resetbtn" title="Reset" class="btn btn-danger"> Reset</button>
+		      <button type="button" id="addrow" title="Add row" class="btn btn-warning"> Row</button>
+		   </div>
+		   <div class="form-group">
+		      <label for="gpa">GPA</label>
+		      <input type="text" id="gpa" readonly class="form-control">
+		   </div>
+		   <div class="form-group">
+		      <div id="gpacircle" class="red small mb-3"></div>
+		   </div>
+		   <div class="form-group">
+		      <label for="total">Total credits/hours</label>
+		      <input type="number" step="any" id="total" class="form-control" readonly>
+		   </div>
+		   <div class="form-group">
+		      <label for="area">GPA calculation</label>
+		      <input rows="3" id="area" class="form-control" readonly>
+		   </div>
+			</form>
+	  </div>
+        
+      <div class="p-2 bg-warning text-info">
+			<h1 class="text-info text-center">Final GPA Calculator</h1>
+			<form id="calcform2" class="calc" autocomplete="off">
+			   <div class="form-group">
+			      <label for="curgpa">Current GPA</label>
+			      <input type="number" min="0" step="any" id="curgpa" class="form-control">
+			   </div>
+			   <div class="form-group">
+			      <label for="tgpa">Target GPA</label>
+			      <input type="number" min="0" step="any" id="tgpa" class="form-control">
+			   </div>
+			   <div class="form-group">
+			      <label for="curhours">Current credits/hours</label>
+			      <input type="number" min="0" step="any" id="curhours" class="form-control">
+			   </div>
+			   <div class="form-group">
+			      <label for="ahours">Additional credits/hours</label>
+			      <input type="number" min="0" step="any" id="ahours" class="form-control">
+			   </div>
+			   <div class="form-group">
+			      <button type="button" id="calcbtn2" title="Calculate" class="btn btn-primary"> Calculate</button>
+			      <button type="reset" id="resetbtn2" title="Reset" class="btn btn-danger"> Reset</button>
+			   </div>
+			   <div class="form-group">
+			      <label for="fgpa">Additional GPA/grade needed to get target GPA</label>
+			      <div class="input-group">
+					<input type="text" id="fgpa" class="form-control mr-2" readonly>
+			      <input type="text" id="flet" class="form-control" readonly>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <div id="finalcircle" class="red small mb-3"></div>
+			   </div>
+			</form>
+         <!-- <h2 class="text-center text-dark mt-5 ">Grate Application</h2> -->
+		</div>
+	
+	</div>
+
+</div>
+<!-- Footer -->
+<div class="footer">
+	<h3>Singapore Polytechnic</h3>
+	<p>500 Dover Road Singapore 139651</p>
+  </div>   
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./js/GpaCalculator.js">
+   
+</script>
+</body>
+</html>
